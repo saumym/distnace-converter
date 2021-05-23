@@ -34,4 +34,10 @@ feet_display.grid(row=1,column=1,sticky="we")
 button=ttk.Button(main,text="Calculate",command=converter)
 button.grid(row=2,column=0,columnspan=2,sticky='we')
 
+for child in main.winfo_children():
+  child.grid_configure(ipadx=10,ipady=10)
+meter_input.bind('<Return>',converter)
+root.bind('<KP_Enter>',converter)
+
+
 root.mainloop()
