@@ -4,6 +4,11 @@ from tkinter import ttk
 root=tk.Tk()
 root.title("Distance converter")
 
+root.columnconfigure(0,weight=1)
+
+main=ttk.Frame(root,padding=(30,15))
+main.grid()
+
 meter_label=ttk.Label(main,text='Meter :',font=('Segoe UI',15))
 meter_input=ttk.Entry(main,width=10,textvariable=meters_value,font=('Segoe UI',15))
 meter_input.focus()
