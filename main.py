@@ -9,6 +9,16 @@ root.columnconfigure(0,weight=1)
 main=ttk.Frame(root,padding=(30,15))
 main.grid()
 
+meters_value=tk.StringVar()
+feets_value=tk.StringVar(value="")
+def converter(*arg):
+  try:
+    meter=float(meters_value.get())
+    feet=meter * 3.28084
+    feets_value.set(f"{feet:.3f}")
+  except ValueError:
+    pass
+
 meter_label=ttk.Label(main,text='Meter :',font=('Segoe UI',15))
 meter_input=ttk.Entry(main,width=10,textvariable=meters_value,font=('Segoe UI',15))
 meter_input.focus()
