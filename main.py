@@ -21,4 +21,7 @@ meter_input.grid(row=0,column=1,sticky='we')
 feet_label.grid(row=1,column=0,sticky='w')
 feet_display.grid(row=1,column=1,sticky="we")
 
+button=ttk.Button(main,text="Calculate",command=converter)
+button.grid(row=2,column=0,columnspan=2,sticky='we')
+
 root.mainloop()
