@@ -1,5 +1,5 @@
 import tkinter as tk
-from tkinter import ttk
+from tkinter import ttk,messagebox
 
 root=tk.Tk()
 root.title("Distance converter")
@@ -17,8 +17,9 @@ out.grid()
 but=ttk.Frame(root,padding=(30,15))
 but.grid()
 
-# ------------ Calculate Function -------------
+# ------------ Variables used -------------
 
+selected_option = tk.StringVar()
 input_value=tk.StringVar()
 kilometers_value=tk.StringVar(value="")
 meters_value=tk.StringVar(value="")
@@ -27,6 +28,11 @@ yards_value=tk.StringVar(value="")
 inches_value=tk.StringVar(value="")
 centimeters_value=tk.StringVar(value="")
 millimeters_value=tk.StringVar(value="")
+
+
+# ------------------------------------------------
+# --------------Converter function--------------
+# -------------------------------------------------
 
 def converter(*arg):
   try:
@@ -65,13 +71,13 @@ def converter(*arg):
 
     # --------------Yard--------------------
     elif option=="Yard":
-      kilometers_value.set(f"{inputvalue / 1000:.3f}")
-      meters_value.set(f"{inputvalue :.3f}")
+      kilometers_value.set(f"{inputvalue * 0.0009144 :.3f}")
+      meters_value.set(f"{inputvalue * 0.9144:.3f}")
       feets_value.set(f"{inputvalue * 3.28084:.3f}")
-      yards_value.set(f"{inputvalue * 1.094:.3f}")
-      inches_value.set(f"{inputvalue * 39.27:.3f}")
-      centimeters_value.set(f"{inputvalue * 100:.3f}")
-      millimeters_value.set(f"{inputvalue * 1000:.3f}")
+      yards_value.set(f"{inputvalue * 3:.3f}")
+      inches_value.set(f"{inputvalue * 36:.3f}")
+      centimeters_value.set(f"{inputvalue * 91.44:.3f}")
+      millimeters_value.set(f"{inputvalue * 914.4:.3f}")
 
     # --------------Inch--------------------
     elif option=="Inch":
@@ -109,6 +115,7 @@ def converter(*arg):
 
   except ValueError:
     print("unknown input")
+    messagebox.showerror("Error", "Wrong input")
 
 
 
@@ -116,21 +123,20 @@ def converter(*arg):
 # -------------input parameters--------------
 # -------------------------------------------
 
-# meter_label=ttk.Label(inp,text='Meter :',)
-selected_option = tk.StringVar()
-options = ttk.Combobox(inp, textvariable=selected_option,font=('Segoe UI',15),width=8)
-options["values"] = ["Kilometer", "Meter", "Feet", "Yard", "Inch", "Centimeter", "Millimeter"]
+input_label=ttk.Label(inp,text='Choose your input unit :',font=('Segoe UI',13))
+
+options = ttk.Combobox(inp, text='choose input', textvariable=selected_option,font=('Segoe UI',15),width=8)
+options["values"] = ["Kilometer", "Meter", "Yard", "Feet", "Inch", "Centimeter", "Millimeter"]
 options["state"] = "readonly"  
 
 meter_input=ttk.Entry(inp,width=10,textvariable=input_value,font=('Segoe UI',15))
-meter_input.focus()
 
 
 # ----------input parameters grid ----------
 
-# meter_label.grid(row=0,column=0,sticky='w')
-options.grid(row=0,column=0,sticky="w")
-meter_input.grid(row=0,column=1,sticky='we')
+input_label.grid(row=0,sticky='we')
+options.grid(row=1,column=0,sticky="w")
+meter_input.grid(row=1,column=1,sticky='we')
 
 
 
