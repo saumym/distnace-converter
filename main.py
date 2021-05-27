@@ -114,8 +114,7 @@ def converter(*arg):
     
 
   except ValueError:
-    print("unknown input")
-    messagebox.showerror("Error", "Wrong input")
+    messagebox.showerror("Error", "Plese give correct input")
 
 
 
@@ -123,14 +122,13 @@ def converter(*arg):
 # -------------input parameters--------------
 # -------------------------------------------
 
-input_label=ttk.Label(inp,text='Choose your input unit :',font=('Segoe UI',13))
+input_label=ttk.Label(inp,text='Choose your unit :',font=('Segoe UI',13))
 
 options = ttk.Combobox(inp, text='choose input', textvariable=selected_option,font=('Segoe UI',15),width=8)
 options["values"] = ["Kilometer", "Meter", "Yard", "Feet", "Inch", "Centimeter", "Millimeter"]
 options["state"] = "readonly"  
-
+options.focus()
 meter_input=ttk.Entry(inp,width=10,textvariable=input_value,font=('Segoe UI',15))
-
 
 # ----------input parameters grid ----------
 
@@ -197,7 +195,7 @@ millimeter_display.grid(row=4,column=1,sticky="we")
 
 button=ttk.Button(but,text="Calculate",command=converter)
 
-button.grid(row=4,column=0,columnspan=2,sticky='we')
+button.grid(row=0,column=0,columnspan=2,sticky='we')
 
 # ---------All component configuration----------
 
