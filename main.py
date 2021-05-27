@@ -1,5 +1,6 @@
 import tkinter as tk
-from tkinter import PhotoImage, ttk,messagebox
+from tkinter import PhotoImage,ttk,messagebox
+import decimal
 
 root=tk.Tk()
 root.title("Distance converter")
@@ -8,6 +9,7 @@ root.columnconfigure(0,weight=1)
 
 p1=PhotoImage(file ='jstudios.png')
 root.iconphoto(False, p1)
+
 # ------------Frames-------------------
 
 inp=ttk.Frame(root,padding=(30,15))
@@ -65,52 +67,52 @@ def converter(*arg):
     # --------------Feet--------------------
     elif option=="Feet":
       kilometers_value.set(f"{inputvalue / 3280.84:.4f}")
-      meters_value.set(f"{inputvalue * 0.3048:.3f}")
-      feets_value.set(f"{inputvalue :.3f}")
-      yards_value.set(f"{inputvalue * 0.33333:.3f}")
-      inches_value.set(f"{inputvalue * 12:.3f}")
-      centimeters_value.set(f"{inputvalue * 30.48:.3f}")
-      millimeters_value.set(f"{inputvalue * 304.8:.3f}")
+      meters_value.set(f"{inputvalue * 0.3048:.4f}")
+      feets_value.set(f"{inputvalue :.4f}")
+      yards_value.set(f"{inputvalue * 0.33333:.4f}")
+      inches_value.set(f"{inputvalue * 12:.4f}")
+      centimeters_value.set(f"{inputvalue * 30.48:.4f}")
+      millimeters_value.set(f"{inputvalue * 304.8:.4f}")
 
     # --------------Yard--------------------
     elif option=="Yard":
-      kilometers_value.set(f"{inputvalue * 0.0009144 :.3f}")
-      meters_value.set(f"{inputvalue * 0.9144:.3f}")
-      feets_value.set(f"{inputvalue * 3.28084:.3f}")
-      yards_value.set(f"{inputvalue * 3:.3f}")
-      inches_value.set(f"{inputvalue * 36:.3f}")
-      centimeters_value.set(f"{inputvalue * 91.44:.3f}")
-      millimeters_value.set(f"{inputvalue * 914.4:.3f}")
+      kilometers_value.set(f"{inputvalue * 0.0009144 :.5f}")
+      meters_value.set(f"{inputvalue * 0.9144:.4f}")
+      feets_value.set(f"{inputvalue * 3.28084:.4f}")
+      yards_value.set(f"{inputvalue * 3:.4f}")
+      inches_value.set(f"{inputvalue * 36:.4f}")
+      centimeters_value.set(f"{inputvalue * 91.44:.4f}")
+      millimeters_value.set(f"{inputvalue * 914.4:.4f}")
 
     # --------------Inch--------------------
     elif option=="Inch":
-      kilometers_value.set(f"{inputvalue / 39370.1:.3f}")
-      meters_value.set(f"{inputvalue * 0.0254:.3f}")
-      feets_value.set(f"{inputvalue / 12:.3f}")
-      yards_value.set(f"{inputvalue * 0.0277777778:.3f}")
-      inches_value.set(f"{inputvalue :.3f}")
-      centimeters_value.set(f"{inputvalue * 2.54:.3f}")
-      millimeters_value.set(f"{inputvalue * 25.4:.3f}")
+      kilometers_value.set(f"{inputvalue / 39370.1:.6f}")
+      meters_value.set(f"{inputvalue * 0.0254:.4f}")
+      feets_value.set(f"{inputvalue / 12:.4f}")
+      yards_value.set(f"{inputvalue * 0.0277777778:.4f}")
+      inches_value.set(f"{inputvalue :.4f}")
+      centimeters_value.set(f"{inputvalue * 2.54:.4f}")
+      millimeters_value.set(f"{inputvalue * 25.4:.4f}")
 
     # --------------centimeter--------------------
     elif option=="Centimeter":
-      kilometers_value.set(f"{inputvalue / 100000:.3f}")
-      meters_value.set(f"{inputvalue / 100:.3f}")
-      feets_value.set(f"{inputvalue / 30.48:.3f}")
-      yards_value.set(f"{inputvalue / 91.44:.3f}")
-      inches_value.set(f"{inputvalue / 2.54:.3f}")
-      centimeters_value.set(f"{inputvalue :.3f}")
-      millimeters_value.set(f"{inputvalue * 10:.3f}")
+      kilometers_value.set(f"{inputvalue / 100000:.6f}")
+      meters_value.set(f"{inputvalue / 100:.4f}")
+      feets_value.set(f"{inputvalue / 30.48:.4f}")
+      yards_value.set(f"{inputvalue / 91.44:.4f}")
+      inches_value.set(f"{inputvalue / 2.54:.4f}")
+      centimeters_value.set(f"{inputvalue :.4f}")
+      millimeters_value.set(f"{inputvalue * 10:.4f}")
 
     # --------------Millimeter--------------------
     elif option=="Millimeter":
-      kilometers_value.set(f"{inputvalue / 1000000:.3f}")
-      meters_value.set(f"{inputvalue / 1000:.3f}")
-      feets_value.set(f"{inputvalue / 304.8:.3f}")
-      yards_value.set(f"{inputvalue / 914:.3f}")
-      inches_value.set(f"{inputvalue / 25.4:.3f}")
-      centimeters_value.set(f"{inputvalue / 10:.3f}")
-      millimeters_value.set(f"{inputvalue :.3f}")
+      kilometers_value.set(f"{inputvalue / 1000000:.6f}")
+      meters_value.set(f"{inputvalue / 1000:.4f}")
+      feets_value.set(f"{inputvalue / 304.8:.4f}")
+      yards_value.set(f"{inputvalue / 914:.4f}")
+      inches_value.set(f"{inputvalue / 25.4:.4f}")
+      centimeters_value.set(f"{inputvalue / 10:.4f}")
+      millimeters_value.set(f"{inputvalue :.4f}")
 
     else:
       raise ValueError
@@ -195,10 +197,18 @@ millimeter_display.grid(row=4,column=1,sticky="we")
 
 
 # -------------------Button---------------------
+style = ttk.Style()
+ 
+style.configure('TButton', font =('Segoe UI', 20, 'bold'),borderwidth = '4')
+ 
+# Changes will be reflected
+# by the movement of mouse.
+style.map('TButton',background = [('active', 'black')])
+ 
 
-button=ttk.Button(but,text="Calculate",command=converter)
+button_calc=ttk.Button(but,text="Calculate",command=converter,style="")
 
-button.grid(row=0,column=0,columnspan=2,sticky='we')
+button_calc.grid(row=0, ipadx=15,ipady=10,sticky='we')
 
 # ---------All component configuration----------
 
