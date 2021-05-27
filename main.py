@@ -31,8 +31,14 @@ millimeters_value=tk.StringVar(value="")
 def converter(*arg):
   try:
     meter=float(input_value.get())
+    kilometers_value.set(f"{meter / 1000:.3f}")
+    meters_value.set(f"{meter :.3f}")
     feets_value.set(f"{meter * 3.28084:.3f}")
-    print(selected_option.get())
+    yards_value.set(f"{meter * 1.094:.3f}")
+    inches_value.set(f"{meter * 39.27:.3f}")
+    centimeters_value.set(f"{meter * 100:.3f}")
+    millimeters_value.set(f"{meter * 1000:.3f}")
+    
     # kilometers_value.set
 
 
@@ -71,10 +77,10 @@ meter_input.grid(row=0,column=1,sticky='we')
 
 
 kilometer_label=ttk.Label(out,text='Kilometer :',font=('Segoe UI',13))
-kilometer_display=ttk.Label(out,textvariable=feets_value,font=('Segoe UI',15))
+kilometer_display=ttk.Label(out,textvariable=kilometers_value,font=('Segoe UI',15))
 
 meter_label=ttk.Label(out,text='Meter :',font=('Segoe UI',13))
-meter_display=ttk.Label(out,textvariable=feets_value,font=('Segoe UI',15))
+meter_display=ttk.Label(out,textvariable=meters_value,font=('Segoe UI',15))
 
 feet_label=ttk.Label(out,text='Feet :',font=('Segoe UI',13))
 feet_display=ttk.Label(out,textvariable=feets_value,font=('Segoe UI',15))
@@ -83,13 +89,13 @@ centimeter_label=ttk.Label(out,text='Centimeter :',font=('Segoe UI',13))
 centimeter_display=ttk.Label(out,textvariable=feets_value,font=('Segoe UI',15))
 
 inch_label=ttk.Label(out,text='Inch :',font=('Segoe UI',13))
-inch_display=ttk.Label(out,textvariable=feets_value,font=('Segoe UI',15))
+inch_display=ttk.Label(out,textvariable=inches_value,font=('Segoe UI',15))
 
 yard_label=ttk.Label(out,text='Yard :',font=('Segoe UI',12))
-yard_display=ttk.Label(out,textvariable=feets_value,font=('Segoe UI',15))
+yard_display=ttk.Label(out,textvariable=yards_value,font=('Segoe UI',15))
 
 millimeter_label=ttk.Label(out,text='Millimeter :',font=('Segoe UI',12))
-millimeter_display=ttk.Label(out,textvariable=feets_value,font=('Segoe UI',15))
+millimeter_display=ttk.Label(out,textvariable=millimeters_value,font=('Segoe UI',15))
 
 
 # --------output parameters grid--------------
