@@ -30,18 +30,82 @@ millimeters_value=tk.StringVar(value="")
 
 def converter(*arg):
   try:
-    meter=float(input_value.get())
-    kilometers_value.set(f"{meter / 1000:.3f}")
-    meters_value.set(f"{meter :.3f}")
-    feets_value.set(f"{meter * 3.28084:.3f}")
-    yards_value.set(f"{meter * 1.094:.3f}")
-    inches_value.set(f"{meter * 39.27:.3f}")
-    centimeters_value.set(f"{meter * 100:.3f}")
-    millimeters_value.set(f"{meter * 1000:.3f}")
+    option=selected_option.get()
+    inputvalue=float(input_value.get())
+
+    # --------------Kilometer--------------------
+    if option=="Kilometer":
+      kilometers_value.set(f"{inputvalue :.3f}")
+      meters_value.set(f"{inputvalue * 1000:.3f}")
+      feets_value.set(f"{inputvalue * 3280.84:.3f}")
+      yards_value.set(f"{inputvalue * 1093.61:.3f}")
+      inches_value.set(f"{inputvalue * 39370.07:.3f}")
+      centimeters_value.set(f"{inputvalue * 100000:.3f}")
+      millimeters_value.set(f"{inputvalue * 1e+6:.3f}")
+
+    # --------------Meter--------------------
+    elif option=="Meter":
+      kilometers_value.set(f"{inputvalue / 1000:.3f}")
+      meters_value.set(f"{inputvalue :.3f}")
+      feets_value.set(f"{inputvalue * 3.28084:.3f}")
+      yards_value.set(f"{inputvalue * 1.094:.3f}")
+      inches_value.set(f"{inputvalue * 39.27:.3f}")
+      centimeters_value.set(f"{inputvalue * 100:.3f}")
+      millimeters_value.set(f"{inputvalue * 1000:.3f}")
+
+    # --------------Feet--------------------
+    elif option=="Feet":
+      kilometers_value.set(f"{inputvalue / 3280.84:.4f}")
+      meters_value.set(f"{inputvalue * 0.3048:.3f}")
+      feets_value.set(f"{inputvalue :.3f}")
+      yards_value.set(f"{inputvalue * 0.33333:.3f}")
+      inches_value.set(f"{inputvalue * 12:.3f}")
+      centimeters_value.set(f"{inputvalue * 30.48:.3f}")
+      millimeters_value.set(f"{inputvalue * 304.8:.3f}")
+
+    # --------------Yard--------------------
+    elif option=="Yard":
+      kilometers_value.set(f"{inputvalue / 1000:.3f}")
+      meters_value.set(f"{inputvalue :.3f}")
+      feets_value.set(f"{inputvalue * 3.28084:.3f}")
+      yards_value.set(f"{inputvalue * 1.094:.3f}")
+      inches_value.set(f"{inputvalue * 39.27:.3f}")
+      centimeters_value.set(f"{inputvalue * 100:.3f}")
+      millimeters_value.set(f"{inputvalue * 1000:.3f}")
+
+    # --------------Inch--------------------
+    elif option=="Inch":
+      kilometers_value.set(f"{inputvalue / 39370.1:.3f}")
+      meters_value.set(f"{inputvalue * 0.0254:.3f}")
+      feets_value.set(f"{inputvalue / 12:.3f}")
+      yards_value.set(f"{inputvalue * 0.0277777778:.3f}")
+      inches_value.set(f"{inputvalue :.3f}")
+      centimeters_value.set(f"{inputvalue * 2.54:.3f}")
+      millimeters_value.set(f"{inputvalue * 25.4:.3f}")
+
+    # --------------centimeter--------------------
+    elif option=="Centimeter":
+      kilometers_value.set(f"{inputvalue / 100000:.3f}")
+      meters_value.set(f"{inputvalue / 100:.3f}")
+      feets_value.set(f"{inputvalue / 30.48:.3f}")
+      yards_value.set(f"{inputvalue / 91.44:.3f}")
+      inches_value.set(f"{inputvalue / 2.54:.3f}")
+      centimeters_value.set(f"{inputvalue :.3f}")
+      millimeters_value.set(f"{inputvalue * 10:.3f}")
+
+    # --------------Millimeter--------------------
+    elif option=="Millimeter":
+      kilometers_value.set(f"{inputvalue / 1000000:.3f}")
+      meters_value.set(f"{inputvalue / 1000:.3f}")
+      feets_value.set(f"{inputvalue / 304.8:.3f}")
+      yards_value.set(f"{inputvalue / 914:.3f}")
+      inches_value.set(f"{inputvalue / 25.4:.3f}")
+      centimeters_value.set(f"{inputvalue / 10:.3f}")
+      millimeters_value.set(f"{inputvalue :.3f}")
+
+    else:
+      raise ValueError
     
-    # kilometers_value.set
-
-
 
   except ValueError:
     print("unknown input")
@@ -86,7 +150,7 @@ feet_label=ttk.Label(out,text='Feet :',font=('Segoe UI',13))
 feet_display=ttk.Label(out,textvariable=feets_value,font=('Segoe UI',15))
 
 centimeter_label=ttk.Label(out,text='Centimeter :',font=('Segoe UI',13))
-centimeter_display=ttk.Label(out,textvariable=feets_value,font=('Segoe UI',15))
+centimeter_display=ttk.Label(out,textvariable=centimeters_value,font=('Segoe UI',15))
 
 inch_label=ttk.Label(out,text='Inch :',font=('Segoe UI',13))
 inch_display=ttk.Label(out,textvariable=inches_value,font=('Segoe UI',15))
@@ -107,17 +171,17 @@ kilometer_display.grid(row=0,column=1,sticky="we")
 meter_label.grid(row=0,column=2,sticky='w')
 meter_display.grid(row=0,column=3,sticky="we")
 
-feet_label.grid(row=2,column=0,sticky='w')
-feet_display.grid(row=2,column=1,sticky="we")
+yard_label.grid(row=1,column=0,sticky='w')
+yard_display.grid(row=1,column=1,sticky="we")
 
-centimeter_label.grid(row=2,column=2,sticky='w')
-centimeter_display.grid(row=2,column=3,sticky="we")
+feet_label.grid(row=1,column=2,sticky='w')
+feet_display.grid(row=1,column=3,sticky="we")
 
 inch_label.grid(row=3,column=0,sticky='w')
 inch_display.grid(row=3,column=1,sticky="we")
 
-yard_label.grid(row=3,column=2,sticky='w')
-yard_display.grid(row=3,column=3,sticky="we")
+centimeter_label.grid(row=3,column=2,sticky='w')
+centimeter_display.grid(row=3,column=3,sticky="we")
 
 millimeter_label.grid(row=4,column=0,sticky='w')
 millimeter_display.grid(row=4,column=1,sticky="we")
