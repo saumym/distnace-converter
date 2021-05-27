@@ -19,12 +19,20 @@ but.grid()
 
 # ------------ Calculate Function -------------
 
-meters_value=tk.StringVar()
+input_value=tk.StringVar()
+kilometers_value=tk.StringVar(value="")
+meters_value=tk.StringVar(value="")
 feets_value=tk.StringVar(value="")
+yards_value=tk.StringVar(value="")
+inches_value=tk.StringVar(value="")
+centimeters_value=tk.StringVar(value="")
+millimeters_value=tk.StringVar(value="")
+
 def converter(*arg):
   try:
-    meter=float(meters_value.get())
+    meter=float(input_value.get())
     feets_value.set(f"{meter * 3.28084:.3f}")
+    print(selected_option.get())
     # kilometers_value.set
 
 
@@ -41,10 +49,10 @@ def converter(*arg):
 # meter_label=ttk.Label(inp,text='Meter :',)
 selected_option = tk.StringVar()
 options = ttk.Combobox(inp, textvariable=selected_option,font=('Segoe UI',15),width=8)
-options["values"] = ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday"]
+options["values"] = ["Kilometer", "Meter", "Feet", "Yard", "Inch", "Centimeter", "Millimeter"]
 options["state"] = "readonly"  
 
-meter_input=ttk.Entry(inp,width=10,textvariable=meters_value,font=('Segoe UI',15))
+meter_input=ttk.Entry(inp,width=10,textvariable=input_value,font=('Segoe UI',15))
 meter_input.focus()
 
 
@@ -80,6 +88,9 @@ inch_display=ttk.Label(out,textvariable=feets_value,font=('Segoe UI',15))
 yard_label=ttk.Label(out,text='Yard :',font=('Segoe UI',12))
 yard_display=ttk.Label(out,textvariable=feets_value,font=('Segoe UI',15))
 
+millimeter_label=ttk.Label(out,text='Millimeter :',font=('Segoe UI',12))
+millimeter_display=ttk.Label(out,textvariable=feets_value,font=('Segoe UI',15))
+
 
 # --------output parameters grid--------------
 
@@ -101,6 +112,9 @@ inch_display.grid(row=3,column=1,sticky="we")
 
 yard_label.grid(row=3,column=2,sticky='w')
 yard_display.grid(row=3,column=3,sticky="we")
+
+millimeter_label.grid(row=4,column=0,sticky='w')
+millimeter_display.grid(row=4,column=1,sticky="we")
 
 
 # -------------------Button---------------------
