@@ -1,11 +1,13 @@
 import tkinter as tk
-from tkinter import ttk,messagebox
+from tkinter import PhotoImage, ttk,messagebox
 
 root=tk.Tk()
 root.title("Distance converter")
 
 root.columnconfigure(0,weight=1)
 
+p1=PhotoImage(file ='jstudios.png')
+root.iconphoto(False, p1)
 # ------------Frames-------------------
 
 inp=ttk.Frame(root,padding=(30,15))
@@ -33,6 +35,7 @@ millimeters_value=tk.StringVar(value="")
 # ------------------------------------------------
 # --------------Converter function--------------
 # -------------------------------------------------
+
 
 def converter(*arg):
   try:
