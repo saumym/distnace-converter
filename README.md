@@ -25,14 +25,14 @@ Made with ❤️ in India
  > You can install Distance-Converter by two ways :
  
 - **Using Installer** (Recommended)
-  1. Download [DistanceConverter.exe]() (setup) file.
+  1. Download [DistanceConverter.exe](https://github.com/ursmaheshj/Distance-Converter/raw/master/DistanceConverter.exe) (setup) file.
   2. Double click the setup file to install.
   3. Browse your destination path and folder .
-  4. Choose to add desktop shortcut
+  4. Add desktop shortcut
   5. After successfull installation you are good to go.
 
 - **Using Zip file** 
-  1. Download [DistanceConverter.zip]() file.
+  1. Download [DistanceConverter.zip](https://github.com/ursmaheshj/Distance-Converter/raw/master/DistanceConverter.zip) file.
   2. Extract zip file anywhere. 
   3. Open extracted zip folder. 
   4. Run main.exe file.
