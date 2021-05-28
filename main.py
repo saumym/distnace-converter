@@ -7,7 +7,7 @@ root.title("Distance converter")
 
 root.columnconfigure(0,weight=1)
 
-p1=PhotoImage(file ='jstudios.png')
+p1=PhotoImage(file ='DistanceConverter.png')
 root.iconphoto(False, p1)
 
 # ------------Frames-------------------
@@ -220,6 +220,5 @@ for child in out.winfo_children():
 
 meter_input.bind('<Return>',converter)
 root.bind('<KP_Enter>',converter)
-
 
 root.mainloop()
