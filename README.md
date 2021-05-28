@@ -1,5 +1,4 @@
  **<h2 align="center">Distance-Converter</h2>**
-<hr>
 <p align="center">
 Made with ❤️ in India
 </p>
@@ -19,14 +18,24 @@ Made with ❤️ in India
     ·
     <a href="https://github.com/ursmaheshj/Distance-Converter/issues/new/choose" target="blank">Initiate Idea</a>
 </p>
-
-
-## 🛠️ Installation Steps
-
-
-
-🌟 You are all set!
 <hr>
+
+## 🛠️ Installation Steps 
+
+ > You can install Distance-Converter by two ways :
+ 
+- **Using Installer** (Recommended)
+  1. Download [DistanceConverter.exe]() (setup) file.
+  2. Double click the setup file to install.
+  3. Browse your destination path and folder .
+  4. Choose to add desktop shortcut
+  5. After successfull installation you are good to go.
+
+- **Using Zip file** 
+  1. Download [DistanceConverter.zip]() file.
+  2. Extract zip file anywhere. 
+  3. Open extracted zip folder. 
+  4. Run main.exe file.
 
 ## 🧐 Features
 - Userfriendly design
