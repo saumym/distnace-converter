@@ -1,22 +1,24 @@
-<p align="center">
-    <a href="https://ursmaheshj.github.io/Distance-converter" target="blank">View Demo</a>
-    ·
-    <a href="https://github.com/ursmaheshj/Distance-Converter/issues/new/choose">Report Bug</a>
-    ·
-    <a href="https://github.com/ursmaheshj/Distance-Converter/issues/new/choose">Initiate Idea</a>
-</p>
-
- **<h2 align="center"><b>Distance-Converter</b></h2>**
+ **<h2 align="center">Distance-Converter</h2>**
 <hr>
 <p align="center">
 Made with ❤️ in India
 </p>
 
-<p align="center"><img src="./src" alt="Distance Converter" /></p>
+**<h2 align="center">  🚀<a href="https://replit.com/@ursmaheshj/Distance-Converter#main.py">Click here to try live demo.. </a></h2>**
 
+<p align="center">
+<a href="https://replit.com/@ursmaheshj/Distance-Converter#main.py"><img src="./src/DistanceConverter.png" alt="Distance Converter" /></a>
+</p>
 
-**<h2 align="center">  🚀<a href="https://replit.com/@ursmaheshj/Distance-Converter#main.py">Try live demo here.. </a></h2>**
+<hr>
 
+<p align="center">
+    <a href="https://github.com/ursmaheshj/Distance-Converter/issues/new/choose" target="blank">Report Bug</a>
+    ·
+    <a href="https://github.com/ursmaheshj/Distance-Converter/issues/new/choose" target="blank">Request feature</a>
+    ·
+    <a href="https://github.com/ursmaheshj/Distance-Converter/issues/new/choose" target="blank">Initiate Idea</a>
+</p>
 
 
 ## 🛠️ Installation Steps
