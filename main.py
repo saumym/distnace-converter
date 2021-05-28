@@ -203,7 +203,7 @@ style.configure('TButton', font =('Segoe UI', 20, 'bold'),borderwidth = '4')
  
 # Changes will be reflected
 # by the movement of mouse.
-style.map('TButton',background = [('active', 'black')])
+style.map('TButton',background = [('active', 'gray')])
  
 
 button_calc=ttk.Button(but,text="Calculate",command=converter,style="")
