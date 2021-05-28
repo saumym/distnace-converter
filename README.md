@@ -4,10 +4,10 @@
 Made with ❤️ in India
 </p>
 
-**<h2 align="center">  🚀<a href="https://replit.com/@ursmaheshj/Distance-Converter#main.py">Click here to try live demo.. </a></h2>**
+**<h2 align="center">  🚀<a href="https://replit.com/@ursmaheshj/Distance-Converter#main.py" target='_blank'> Click here to try live demo.. </a></h2>**
 
 <p align="center">
-<a href="https://replit.com/@ursmaheshj/Distance-Converter#main.py"><img src="./src/DistanceConverter.png" alt="Distance Converter" /></a>
+<a href="https://replit.com/@ursmaheshj/Distance-Converter#main.py" target='_blank'><img src="./src/DistanceConverter.png" alt="Distance Converter" /></a>
 </p>
 
 <hr>
