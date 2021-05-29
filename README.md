@@ -53,6 +53,6 @@ Made with ❤️ in India
 Please contribute using [GitHub Flow](https://guides.github.com/introduction/flow); Create a branch, add commits, and [open a pull request](https://github.com/ursmaheshj/distance-Converter/compare).
 
 ## 🙏 Support
-Dont hesitate to fork this repository and give a star if you like it..
+Dont hesitate to [fork](https://github.com/login?return_to=%2Fursmaheshj%2FDistance-Converter) this repository and give a [star](https://github.com/login?return_to=%2Fursmaheshj%2FDistance-Converter) if you like it..
 
 <hr>
